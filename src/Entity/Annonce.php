@@ -75,6 +75,11 @@ class Annonce
      */
     private $Annonce;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="annonces")
+     */
+    private $type;
+
    
     public function __construct()
     {
@@ -244,6 +249,18 @@ class Annonce
         
         $this->Annonce = $Annonce;
  
+        return $this;
+    }
+
+    public function getType(): ?Type
+    {
+        return $this->type;
+    }
+
+    public function setType(?Type $type): self
+    {
+        $this->type = $type;
+
         return $this;
     }
 

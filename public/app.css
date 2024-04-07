@@ -72,3 +72,16 @@ html, body {
     max-width: 40px;
     height: auto;
 }
+
+nav.navbar.navbar-expand-lg.bg-light {
+    padding: 22px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-info{
+    background-color: rgb(13, 169, 241);
+}
+.btn-danger{
+    background-color: rgb(200, 22, 22);
+}

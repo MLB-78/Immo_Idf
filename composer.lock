@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "228d84910ae0b790677c19cf3681a5cd",
+    "content-hash": "f90c674edc77ed9387fe2bfb174cdc78",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -7530,16 +7530,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.4.36",
+            "version": "v5.4.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "2e9c2b11267119d9c90d6b3fdce5e4e9f15e2e90"
+                "reference": "ae1d949ccc57d3f6662e4256b47ac9fbfa9651ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/2e9c2b11267119d9c90d6b3fdce5e4e9f15e2e90",
-                "reference": "2e9c2b11267119d9c90d6b3fdce5e4e9f15e2e90",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/ae1d949ccc57d3f6662e4256b47ac9fbfa9651ae",
+                "reference": "ae1d949ccc57d3f6662e4256b47ac9fbfa9651ae",
                 "shasum": ""
             },
             "require": {
@@ -7599,7 +7599,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v5.4.36"
+                "source": "https://github.com/symfony/var-dumper/tree/v5.4.38"
             },
             "funding": [
                 {
@@ -7615,7 +7615,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-15T11:19:14+00:00"
+            "time": "2024-03-19T10:19:25+00:00"
         },
         {
             "name": "symfony/var-exporter",
