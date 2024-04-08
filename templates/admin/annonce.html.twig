@@ -4,6 +4,15 @@
 
 {% block body %}
 
+{# Affichage des messages flash #}
+{% for type, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ type }}" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
 <div class="container">
     <h1 class="pt-2 text-center" style="color:">Gestion des annonces</h1>
     <div class="d-flex justify-content-end">

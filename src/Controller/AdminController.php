@@ -32,7 +32,10 @@ class AdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->persist($annonce);
             $manager->flush();
-            $this->addFlash("success", "L'annonce a été ajoutée/modifiée avec succès");
+
+            // Ajoutez le message flash spécifique pour l'ajout
+            $this->addFlash("success", "L'annonce a été ajoutée avec succès");
+
             return $this->redirectToRoute('adminA');
         }
 
@@ -52,7 +55,10 @@ class AdminController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->flush();
+
+            // Ajoutez le message flash spécifique pour la modification
             $this->addFlash("success", "L'annonce a été modifiée avec succès");
+
             return $this->redirectToRoute('adminA');
         }
 
@@ -71,6 +77,7 @@ class AdminController extends AbstractController
             $entityManager->remove($annonce);
             $entityManager->flush();
 
+            // Ajoutez le message flash spécifique pour la suppression
             $this->addFlash("success", "L'annonce a été supprimée avec succès");
         } else {
             $this->addFlash("error", "Échec de suppression de l'annonce");
