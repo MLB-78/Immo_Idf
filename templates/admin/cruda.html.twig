@@ -5,7 +5,7 @@
 {% block body %}
 
 <div class="container">
-    <h1 class="pt-2 text-center" style="color:white">Gestion des annonces</h1>
+    <h1 class="pt-2 text-center" style="color:black">Gestion des annonces</h1>
     <div class="d-flex justify-content-end">
     <a href="{{ path('app_admin_form') }}" class="btn btn-success" style="border-radius: 4px;">
         <img src="{{ asset('img/ajout.png') }}" style="width: 27px" class="mr-2"> Ajouter une annonce
@@ -29,14 +29,14 @@
         
             <tbody>
                 <tr>
-                    <td class="col-1"><img class"mx-auto d-block" style="border-radius: 60%;height:auto; width:100px; margin:auto; display:block;" src="{{leAnnonce.image}}" alt="Card image"></td>
-                    <td class="col-2">{{ leAnnonce.organisme }}</td>
+                    <td class="col-1"><img class"mx-auto d-block" style="border-radius: 8px;height:auto; width:100px; margin:auto; display:block;" src="{{leAnnonce.image}}" alt="Card image"></td>
+                    <td class="col-2">Vendeur : {{ leAnnonce.organisme }}</td>
                     <td class="col-7">
                         <p class="d-flex flex-row">
-                            <span class="align-self-center ml-auto">{{leAnnonce.prix}}</span>
+                            <span class="align-self-center ml-auto">{{leAnnonce.prix}}€</span>
                         </p>
                         <p>
-                            {{leAnnonce.description|slice(0,100)|raw}}
+                            {{leAnnonce.description|slice(0,350)|raw}}
                         </p>
                     </td>
                     <td class="col-2">
