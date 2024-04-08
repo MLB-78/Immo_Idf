@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter une annonce{% endblock %}
+{% block title %}Formulaire annonce{% endblock %}
 
 {% block body %}
 {# formulaire #}
 <div class="container">
-    <h1 class="pt-2 text-center" style="color:white">
+    <h1 class="pt-2 text-center" style="color:black">
         {% if route == "app_admin_form" %}
             Ajouter
         {% else %}
@@ -16,17 +16,36 @@
 
     <br>
 
-    {{ form_start(formAnnonce, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_start(formAnnonce, {'attr': {'novalidate': 'novalidate'}}) }}
 
-    {{ form_row(formAnnonce.organisme, {'label': "Nom de l'annonce"}) }}
-    {{ form_row(formAnnonce.description) }}
-    <div class="row">
+{{ form_row(formAnnonce.organisme, {'label': "Nom de l'organisme vendeur (ex: Century 21)", 'attr': {'class': 'form-control'}}) }}
+
+<div class="row">
+    <div class="col-md-4">
+        {{ form_row(formAnnonce.prix, {'label': 'Prix', 'attr': {'class': 'form-control'}}) }}
     </div>
+    <div class="col-md-4">
+        {{ form_row(formAnnonce.superficie, {'label': 'Superficie', 'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="col-md-4">
+        {{ form_row(formAnnonce.nb_piece, {'label': 'Nombre de pièces', 'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
 
-    {{ form_row(formAnnonce.image) }}
+{{ form_row(formAnnonce.type, {'label': 'Type', 'attr': {'class': 'form-control'}}) }}
 
-    {{ form_end(formAnnonce) }}
-    <br>
+{{ form_row(formAnnonce.description, {'attr': {'class': 'form-control', 'style': 'height: 150px'}}) }}
+
+<div class="row">
+</div>
+
+{{ form_row(formAnnonce.image, {'attr': {'class': 'form-control'}}) }}
+{{ form_row(formAnnonce.ville, {'attr': {'class': 'form-control'}}) }}
+{{ form_row(formAnnonce.cp, {'attr': {'class': 'form-control'}}) }}
+
+
+<br>
+
 
     {# Les boutons #}
     <div class="row justify-content-center">
@@ -42,6 +61,11 @@
         </div>
     </div>
 </div>
+
+{{ form_end(formAnnonce) }}
+
+
+
 
 <br><br><br>
 {% endblock %}

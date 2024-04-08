@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'une annonce{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="pt-2 text-center" style="color:black">Modification d'une annonce</h1>
+            {{ form_start(formAnnonce) }}
+            {{ form_widget(formAnnonce) }}
+
+            <br>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Modifier l'annonce</button>
+                &nbsp;&nbsp;&nbsp;
+                <a href="{{ path('adminA') }}" class="btn btn-secondary">Retour</a>
+            </div>
+            {{ form_end(formAnnonce) }}
+        </div>
+    </div>
+</div>
+{% endblock %}

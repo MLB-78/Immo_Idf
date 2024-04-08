@@ -5,7 +5,7 @@
 {% block body %}
 
 <div class="container">
-    <h1 class="pt-2 text-center" style="color:black">Gestion des annonces</h1>
+    <h1 class="pt-2 text-center" style="color:">Gestion des annonces</h1>
     <div class="d-flex justify-content-end">
     <a href="{{ path('app_admin_form') }}" class="btn btn-success" style="border-radius: 4px;">
         <img src="{{ asset('img/ajout.png') }}" style="width: 27px" class="mr-2"> Ajouter une annonce
@@ -41,25 +41,22 @@
                     </td>
                     <td class="col-2">
                         <div class="d-flex justify-content-between">
-                            <a href=" {{path('adminA',{'id': leAnnonce.id})}} " class="btn btn-info" id="btn">
+                            <a href="{{ path('admin_annonces_modification',{'id': leAnnonce.id}) }}" class="btn btn-info" id="btn">
                                 <img src="{{ asset('img/modif.png') }}" style="width: 27px">
                             </a>
                             &nbsp;
 
-                            <a href="#" 
-                            class="btn btn-danger" 
-                            id="btn" 
-                            data-toggle="modal" 
-                            data-target="#modalSimple" 
-                            data-titre="Suppression d'un annonce"
-                            data-message="Etes vous sur de vouloir supprimer l'annonce : cette annonce"
-                            data-libelle-bouton="Supprimer"
-                            {# data-lien="{{ path('', {'id' : leAnnonce.id}) }}" #}
-                            >
+      
+<form id="deleteForm{{ leAnnonce.id }}" action="{{ path('admin_annonces_suppression', {'id': leAnnonce.id}) }}" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette annonce?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ leAnnonce.id) }}">
+    <button type="submit" class="btn btn-danger">
+        <img src="{{ asset('img/supp.png') }}" style="width: 27px">
+    </button>
+</form>
 
 
-                                <img src="{{ asset('img/supp.png') }}" style="width: 27px">
-                            </a>
+
                         </div>
                     </td>
 

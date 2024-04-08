@@ -11,3 +11,5 @@ kernel:
 biens:
     path: /biens
     controller: App\Controller\ListeBiensController::listeBiens
+
+
