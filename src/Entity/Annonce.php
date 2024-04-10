@@ -6,6 +6,7 @@ use App\Repository\AnnonceRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AnnonceRepository::class)
@@ -22,26 +23,36 @@ class Annonce
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez saisir le nom de la ville")
      */
     private $ville;
 
     /**
      * @ORM\Column(type="string", length=500)
+     * @Assert\Length( 
+     *  min=10,
+     *  max=250,
+     *  minMessage="La description doit comporter au minimum {{ limit }}",
+     *  maxMessage="La description doit comporter au maximum{{ limit }}"
+     * )
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez insérer l'image du bien que vous souhaitez vendre")
      */
     private $image;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez indiquez le code postale")
      */
     private $cp;
 
     /**
      * @ORM\ManyToOne(targetEntity=Utilisateur::class, inversedBy="annonces")
+
      */
     private $Utilisateurs;
 

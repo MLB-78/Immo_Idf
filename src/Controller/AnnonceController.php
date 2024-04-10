@@ -24,13 +24,18 @@ class AnnonceController extends AbstractController
         $choix = $request->query->get('choix2');
 
         // Récupérez toutes les annonces par défaut
-        $query = $annonceRepository->createQueryBuilder('a')->getQuery();
+$queryBuilder = $annonceRepository->createQueryBuilder('a');
 
-        // Vérifiez si un choix a été fait dans le formulaire
-        if ($choix) {
-            // Récupérez les annonces filtrées par le choix de type de bien
-            $query->andWhere('a.type = :type')->setParameter('type', $choix);
-        }
+// Vérifiez si un choix a été fait dans le formulaire
+if ($choix) {
+    // Ajouter la condition de filtrage
+    $queryBuilder->andWhere('a.type = :type')
+                 ->setParameter('type', $choix);
+}
+
+// Récupérer la requête
+$query = $queryBuilder->getQuery();
+
 
         // Paginer les résultats
         $annonces = $paginator->paginate(

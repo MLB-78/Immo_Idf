@@ -34,6 +34,11 @@ class Vendeur
      */
     private $annonces;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $urlSite;
+
     public function __construct()
     {
         $this->annonces = new ArrayCollection();
@@ -94,6 +99,18 @@ class Vendeur
                 $annonce->setVendeurs(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUrlSite(): ?string
+    {
+        return $this->urlSite;
+    }
+
+    public function setUrlSite(?string $urlSite): self
+    {
+        $this->urlSite = $urlSite;
 
         return $this;
     }
