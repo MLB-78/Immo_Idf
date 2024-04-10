@@ -27,7 +27,7 @@ class AnnonceController extends AbstractController
 $queryBuilder = $annonceRepository->createQueryBuilder('a');
 
 // Vérifiez si un choix a été fait dans le formulaire
-if ($choix) {
+if ($choix) {    
     // Ajouter la condition de filtrage
     $queryBuilder->andWhere('a.type = :type')
                  ->setParameter('type', $choix);
