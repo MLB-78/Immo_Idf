@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Agences {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="pt-2 text-center" style="color: black">Les agences partenaires du sites</h1>
+    <hr>
+    
+    <br>
+
+
+<form action="{{ path('agences') }}" method="GET" class="input-group mb-3" id="searchForm">
+    <input type="text" class="form-control" name="query" placeholder="exemple : YAOUNDÉ IMMOBILIER" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button class="btn btn-primary" type="submit" id="button-addon2">Rechercher un vendeur</button>
+    <button class="btn btn-primary" type="button" onclick="resetForm()">Réinitialiser</button>
+</form>
+
+<script>
+    function resetForm() {
+        document.getElementById("searchForm").reset(); // Reset the form
+        window.location.href = "{{ path('agences') }}"; // Refresh the page
+    }
+</script>
+
+
+
+    <br>
+
+    <div class="row pt-2">
+        {% for agence in lesAgences %}
+            <div class="col-md-4 mb-3">
+
+                <div class="card">
+                    <h3 class="card-header" style="color: red">
+                        <a href="">{{ agence.nomV }}</a>
+                    </h3>
+                    <img src="{{ agence.image }}" alt="" srcset="">
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+   
+</div>
+{% endblock %}

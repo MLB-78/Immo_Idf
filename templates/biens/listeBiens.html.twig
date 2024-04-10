@@ -34,7 +34,7 @@
 
     <div class="row pt-2">
         {% for leAnnonce in lesAnnonces %}
-            <div class="col-md-3 mb-3">
+            <div class="col-md-4 mb-3">
                 <div class="card">
                     <img class="mx-auto d-block w-100" style="max-height: 150px; margin: auto; display: block;" src="{{ leAnnonce.image }}" alt="Card image">
 
@@ -53,7 +53,7 @@
     </div>
 
     <div class="navi text-center mt-3 mb-3">
-        {# {{ knp_pagination_render(lesAnnonces) }} #}
+        {{ knp_pagination_render(lesAnnonces) }}
     </div>
 </div>
 {% endblock %}

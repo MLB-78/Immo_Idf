@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Repository;
 
 use App\Entity\Vendeur;
@@ -21,46 +22,14 @@ class VendeurRepository extends ServiceEntityRepository
         parent::__construct($registry, Vendeur::class);
     }
 
-    public function add(Vendeur $entity, bool $flush = false): void
+    // Define a method to search for sellers based on a query
+    public function searchVendeur($query): array
     {
-        $this->getEntityManager()->persist($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+        return $this->createQueryBuilder('v')
+            ->andWhere('v.nomV LIKE :query')
+            ->setParameter('query', '%' . $query . '%')
+            ->orderBy('v.nomV', 'ASC')
+            ->getQuery()
+            ->getResult();
     }
-
-    public function remove(Vendeur $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
-
-//    /**
-//     * @return Vendeur[] Returns an array of Vendeur objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('v')
-//            ->andWhere('v.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('v.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Vendeur
-//    {
-//        return $this->createQueryBuilder('v')
-//            ->andWhere('v.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }
