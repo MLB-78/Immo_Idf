@@ -32,6 +32,5 @@ Installez les dépendances en exécutant la commande composer install.
 Configurez votre base de données dans le fichier .env.
 Créez la structure de la base de données en exécutant les migrations avec la commande php bin/console doctrine:migrations:migrate.
 Lancez le serveur local avec la commande symfony server:start.
-Contributeurs
-<br><br>
-[MLB](https://github.com/MLB-78))
+<br><br><br>
+Contributeurs : [MLB](https://github.com/MLB-78))
