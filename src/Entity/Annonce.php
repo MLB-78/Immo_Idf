@@ -19,11 +19,6 @@ class Annonce
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $organisme;
-
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -80,6 +75,11 @@ class Annonce
      */
     private $type;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Vendeur::class, inversedBy="annonces")
+     */
+    private $vendeurs;
+
    
     public function __construct()
     {
@@ -95,18 +95,6 @@ class Annonce
     public function setId(int $id): self
     {
         $this->id = $id;
-
-        return $this;
-    }
-
-    public function getOrganisme(): ?string
-    {
-        return $this->organisme;
-    }
-
-    public function setOrganisme(string $organisme): self
-    {
-        $this->organisme = $organisme;
 
         return $this;
     }
@@ -260,6 +248,18 @@ class Annonce
     public function setType(?Type $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getVendeurs(): ?Vendeur
+    {
+        return $this->vendeurs;
+    }
+
+    public function setVendeurs(?Vendeur $vendeurs): self
+    {
+        $this->vendeurs = $vendeurs;
 
         return $this;
     }
