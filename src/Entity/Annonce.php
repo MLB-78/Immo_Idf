@@ -91,6 +91,12 @@ class Annonce
      */
     private $vendeurs;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Etat::class, inversedBy="annonces")
+     * @Assert\NotBlank(message="Veuillez séléctionnez au mois un état !")
+     */
+    private $etat;
+
    
     public function __construct()
     {
@@ -271,6 +277,18 @@ class Annonce
     public function setVendeurs(?Vendeur $vendeurs): self
     {
         $this->vendeurs = $vendeurs;
+
+        return $this;
+    }
+
+    public function getEtat(): ?Etat
+    {
+        return $this->etat;
+    }
+
+    public function setEtat(?Etat $etat): self
+    {
+        $this->etat = $etat;
 
         return $this;
     }

@@ -25,6 +25,19 @@
                 </select>
                 <button type="submit">Rechercher</button>
             </form>
+                <h4>Filtrer par etat :</h4>
+               {# Utilisez ce template pour inclure le formulaire de filtrage dans votre vue principale #}
+
+              <form id="filtre-form" action="{{ path('annonces') }}" method="get">
+                <label for="choix3">Sélectionnez par etat :</label>
+                <select id="choix3" name="choix3">
+                    <option value="">Tous les biens</option>
+                    <option value="1">Neuf</option>
+                    <option value="2">Raffraichissement à prévoir</option>
+                    <option value="3">à Rénover</option>
+                </select>
+                <button type="submit">Rechercher</button>
+            </form>
 
             </div>
         </div>
@@ -43,6 +56,7 @@
                     </h3>
 
                     <div class="card-body">
+                        <h4 style="color:white;background-color:orange;padding:3px;">{{leAnnonce.etat.status}}</h4>
                         <p class="card-text">{{ leAnnonce.ville }} &nbsp;&nbsp; {{ leAnnonce.cp }} </p>
                         <p class="card-text">Vendeur : {{ leAnnonce.vendeurs.nomV }}</p>
                         <p class="card-text">{{ leAnnonce.superficie }} km² - Nombre de pièces : {{ leAnnonce.NbPiece }} </p>
