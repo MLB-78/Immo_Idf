@@ -1,14 +1,16 @@
 # Projet Immo IDF
+
 Modèle de conception du projet
-<img src="immo%20idf/i1.png" alt="Texte alternatif" width="200">
+
+<img src="immo%20idf/i1.png" alt="Texte alternatif" width="450">
 
 ## Présentation
 
-<img src="immo%20idf/i2.png" alt="Texte alternatif" width="200">
+<img src="immo%20idf/i2.png" alt="Texte alternatif" width="450">
 
 Le projet Immo IDF, anciennement connu sous le nom de Immo CTMF, est un site web dédié à la publication et à la consultation d'annonces immobilières dans la région d'Île-de-France. Cette refonte vise à moderniser et à améliorer l'expérience utilisateur, ainsi qu'à fournir de nouvelles fonctionnalités pour faciliter la gestion des annonces.
 
-<img src="immo%20idf/i3.png" alt="Texte alternatif" width="200">
+<img src="immo%20idf/i3.png" alt="Texte alternatif" width="450">
 
 ### Fonctionnalités clés
 
@@ -20,8 +22,8 @@ Le projet Immo IDF, anciennement connu sous le nom de Immo CTMF, est un site web
 - **Modèle Conceptuel de Données (MCD) Réorganisé:** Le modèle de données a été repensé et amélioré pour mieux refléter la structure et les relations des données de l'application.
 - **Suivi du Développement avec GIT:** Le processus de développement a été suivi en utilisant Git pour assurer une gestion efficace des versions et une collaboration transparente entre les membres de l'équipe.
 
-<img src="immo%20idf/i4.png" alt="Texte alternatif" width="200">
+<img src="immo%20idf/i4.png" alt="Texte alternatif" width="450">
 
-<img src="immo%20idf/i5.png" alt="Texte alternatif" width="200">
+<img src="immo%20idf/i5.png" alt="Texte alternatif" width="450">
 
-<img src="immo%20idf/i6.png" alt="Texte alternatif" width="200">
+<img src="immo%20idf/i6.png" alt="Texte alternatif" width="450">
